@@ -1,4 +1,31 @@
+# このリポジトリについて
+
+https://github.com/IMSJapan/basiclti-java-sample を元に、以下の変更を行ったものです。
+
+* spring-boot 2.5.4 へのバージョンアップ
+* Java11 へのバージョンアップ
+* basiclti-utilの 1.2.0 へのバージョンアップ
+* 起動時のコンテキストパスの追加(/basiclti-java-sample)
+* テンプレート(index.html, error.html)の修正
+* リバースプロキシ下での動作を意識したX-Forwarded-Proto対応
+コミットログ: https://github.com/kcg-edu-future-lab/basiclti-java-sample/commit/d489361c0708b2adcac94c4dc025151accf04ac6
+
+Apacheをリバースプロキシとして利用する場合の設定例を以下に示します。
+
+```
+<Location /basiclti-java-sample>
+  ProxyPass http://localhost:8090/basiclti-java-sample
+  ProxyPassReverse http://localhost:8090/basiclti-java-sample
+  ProxyPreserveHost On
+  RequestHeader set X-Forwarded-Proto https
+</Location>
+```
+
+これ以降の文章は、オリジナルのリポジトリと同じ内容です。
+
+
 # basiclti-java-sample
+
 IMS Global Learning Tools Interoperability 1.1を利用した、LTI Tool Providerのサンプルプログラムです。
 Webアプリケーションフレームワークとして、Spring Bootを利用しています。
 
