@@ -22,6 +22,12 @@ Apacheをリバースプロキシとして利用する場合の設定例を以�
 </Location>
 ```
 
+LMSへツールプロバイダとして設定する場合は、以下のURLを使用してください。
+ - LtiController: https://[host]/basiclti-java-sample/launch
+ - LtiWebController: https://[host]/basiclti-java-sample/launchweb
+
+
+
 これ以降の文章は、オリジナルのリポジトリと同じ内容です。
 
 
